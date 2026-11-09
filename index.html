@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập mảng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 text-gray-800">
+    <div class="max-w-3xl mx-auto px-4 py-8 space-y-6">
+      <h1 class="text-3xl font-bold text-center text-amber-500">Bài tập mảng</h1>
+
+      
+
+      <!-- THÊM SỐ -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">Thêm số</h2>
+        <div class="flex gap-2">
+          <input
+            id="inputNumber"
+            type="number"
+            placeholder="Nhập số nguyên"
+            class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400"
+          />
+          <button
+            id="btnAddNumber"
+            onclick="addNumber()"
+            class="bg-amber-500 hover:bg-amber-600 text-white font-medium px-4 py-2 rounded-lg"
+          >
+            Thêm số
+          </button>
+        </div>
+        <p class="text-gray-700">👉 <span id="arrayResult" class="font-medium">Mảng hiện tại: [ ]</span></p>
+      </section>
+
+      <!-- BÀI 1 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">1️⃣ Tổng số dương</h2>
+        <button id="btnBai1" onclick="bai1()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Tính tổng</button>
+        <p>👉 <span id="resultBai1"></span></p>
+      </section>
+
+      <!-- BÀI 2 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">2️⃣ Đếm số dương</h2>
+        <button id="btnBai2" onclick="bai2()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Đếm số</button>
+        <p>👉 <span id="resultBai2"></span></p>
+      </section>
+
+      <!-- BÀI 3 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">3️⃣ Tìm số nhỏ nhất</h2>
+        <button id="btnBai3" onclick="bai3()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Tìm số nhỏ nhất</button>
+        <p>👉 <span id="resultBai3"></span></p>
+      </section>
+
+      <!-- BÀI 4 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">4️⃣ Tìm số dương nhỏ nhất</h2>
+        <button id="btnBai4" onclick="bai4()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Tìm số dương nhỏ nhất</button>
+        <p>👉 <span id="resultBai4"></span></p>
+      </section>
+
+      <!-- BÀI 5 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">5️⃣ Tìm số chẵn cuối cùng</h2>
+        <button id="btnBai5" onclick="bai5()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Tìm số chẵn</button>
+        <p>👉 <span id="resultBai5"></span></p>
+      </section>
+
+      <!-- BÀI 6 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">6️⃣ Đổi chỗ</h2>
+        <div class="flex flex-wrap gap-2">
+          <input id="inputIndex1" type="number" placeholder="Vị trí 1" class="flex-1 min-w-[120px] border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+          <input id="inputIndex2" type="number" placeholder="Vị trí 2" class="flex-1 min-w-[120px] border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+          <button id="btnBai6" onclick="bai6()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Đổi chỗ</button>
+        </div>
+        <p>👉 <span id="resultBai6"></span></p>
+      </section>
+
+      <!-- BÀI 7 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">7️⃣ Sắp xếp tăng dần</h2>
+        <button id="btnBai7" onclick="bai7()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Sắp xếp</button>
+        <p>👉 <span id="resultBai7"></span></p>
+      </section>
+
+      <!-- BÀI 8 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">8️⃣ Tìm số nguyên tố đầu tiên</h2>
+        <button id="btnBai8" onclick="bai8()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Tìm số nguyên tố</button>
+        <p>👉 <span id="resultBai8"></span></p>
+      </section>
+
+      <!-- BÀI 9 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">9️⃣ Đếm số nguyên</h2>
+        <div class="flex gap-2">
+          <input id="inputRealNumber" type="number" step="any" placeholder="Nhập số thực" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+          <button id="btnAddReal" onclick="addRealNumber()" class="bg-amber-500 hover:bg-amber-600 text-white font-medium px-4 py-2 rounded-lg">Thêm số</button>
+        </div>
+        <p>👉 <span id="realArrayResult" class="font-medium">Mảng số thực: [ ]</span></p>
+        <button id="btnBai9" onclick="bai9()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Đếm số nguyên</button>
+        <p>👉 <span id="resultBai9"></span></p>
+      </section>
+
+      <!-- BÀI 10 -->
+      <section class="bg-white rounded-xl shadow p-5 space-y-3">
+        <h2 class="text-xl font-semibold">🔟 So sánh số lượng số âm và dương</h2>
+        <button id="btnBai10" onclick="bai10()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">So sánh</button>
+        <p>👉 <span id="resultBai10"></span></p>
+      </section>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
